@@ -1,65 +1,39 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/5.0.2/css/foundation.css"/>
-<div class="result">
-  
-  <h1>Your internet speed is...</h1>
-  <div class="panel" id="results">
-    
-    Still waiting for the meassurements.
-    
-  </div>
-  
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+<h1class="p">Tic tac toe copy link button be safe kids</h1>
 
-/**
- * This function performs a synchronous request
- * and returns an object contain informations about the download
- * time and size
- */
-function measure(filename) {
-  var xhr = new XMLHttpRequest();
-  var measure = {};
-  xhr.open("GET", filename + '?' + (new Date()).getTime(), false);
-  measure.start = (new Date()).getTime();
-  xhr.send(null);
-  measure.end = (new Date()).getTime();
-  measure.len = parseInt(xhr.getResponseHeader('Content-Length') || 0);
-  measure.delta = measure.end - measure.start;
-  return measure;
+
+
+<!-- The text field -->
+<input type="text" value="https://html-css-js.com/?html=%3C!--%20The%20text%20field%20--%3E%0A%3Cinput%20type=%22text%22%20value=%22Hello%20World%22%20i$*$d=%22myInput%22%3E%0A%0A%3C!--%20The%20button%20used%20to%20copy%20the%20text%20--%3E%0A%3Cbutton%20onclick=%22myFunction()%22%3ECopy%20text%3C/button%3E&css=&js=function%20myFunction()%20%7B%0A%20%20/*%20Get%20the%20text%20field%20*/%0A%20%20var%20copyText%20=%20document.getElementById(%22myInput%22);%0A%0A%20%20/*%20Select%20the%20text%20field%20*/%0A%20%20copyText.select();%0A%20%20copyText.setSelectionRange(0,%2099999);%20/*%20For%20mobile%20devices%20*/%0A%0A%20%20%20/*%20Copy%20the%20text%20insi$*$de%20the%20text%20field%20*/%0A%20%20navigator.clipboard.writeText(copyText.value);%0A%0A%20%20/*%20Alert%20the%20copied%20text%20*/%0A%20%20alert(%22Copied%20the%20text:%20%22%20+%20copyText.value);%0A%7D" id="myInput">
+
+<!-- The button used to copy the text -->
+<button onclick="myFunction()" class="p">Copy text</button>
+
+
+
+
+<script>
+  
+  
+  function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
 }
-
-/**
- * Requires that we pass a base url to the worker
- * The worker will measure the download time needed to get
- * a ~0KB and a 100KB.
- * It will return a string that serializes this informations as
- * pipe separated values
- */
-onmessage = function(e) {
-  measure0 = measure(e.data.base_url + '/test/0.bz2');
-  measure100 = measure(e.data.base_url + '/test/100K.bz2');
-  postMessage(
-    measure0.delta + '|' +
-    measure0.len + '|' +
-    measure100.delta + '|' +
-    measure100.len
-  );
-};
+  
+  
 </script>
-
-
 
 <style>
   
-  .result {
-     width: 66%;
-     margin: 0 auto;
-     padding: 1.5em;
-}
- #results {
-     border: 1px solid #3498db;
-}
+  P { text-align: center }
   
 </style>
-
-<h1 id="progress">JavaScript is turned off, or your browser is realllllly slow</h1>
